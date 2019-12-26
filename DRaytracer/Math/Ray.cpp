@@ -1,0 +1,15 @@
+#include "Ray.h"
+
+Ray::Ray()
+{
+}
+
+Ray::Ray(const Vector3& o, const Vector3& dir)
+: origin(o), direction(dir)
+{
+}
+
+Vector3 Ray::Interpolate(float t)
+{
+	return origin + direction * t;
+}
