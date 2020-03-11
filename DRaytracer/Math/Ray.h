@@ -12,7 +12,7 @@ struct Ray
 	Ray();
 	Ray(const Vector3& o, const Vector3& dir);
 
-	Vector3 Interpolate(float t);
+	Vector3 GetPoint(double t) const;
 };
 
 #endif

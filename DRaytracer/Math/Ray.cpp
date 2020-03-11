@@ -9,7 +9,7 @@ Ray::Ray(const Vector3& o, const Vector3& dir)
 {
 }
 
-Vector3 Ray::Interpolate(float t)
+Vector3 Ray::GetPoint(double t) const
 {
 	return origin + direction * t;
 }

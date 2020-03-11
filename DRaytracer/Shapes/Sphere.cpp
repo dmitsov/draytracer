@@ -36,7 +36,8 @@ bool Sphere::Intersect(const Ray& ray, SampleData& data) const
 			return false;
 		}
 
-		return true;
+		data.distance = t2 >= 0 ? t2 : t1;
+
 	}
 	else if(D == 0)
 	{
@@ -47,11 +48,17 @@ bool Sphere::Intersect(const Ray& ray, SampleData& data) const
 			return false;
 		}
 
-
-		return true;
+		data.distance = t;
+	}
+	else
+	{
+		return false;
 	}
 
-	return false;
+	data.point = ray.GetPoint(data.distance);
+	data.normal = data.point - center;
+
+	return true;
 }
 
 

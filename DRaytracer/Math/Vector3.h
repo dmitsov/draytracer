@@ -18,10 +18,13 @@ struct Vector3
 	Vector3 operator-(const Vector3& other) const;
 
 	double dot(const Vector3& other) const;
+	double length() const;
+	Vector3 normalize() const;
+
 };
 
-Vector3 operator*(const Vector3& other, float scalar);
-Vector3 operator*(float scalar, const Vector3& other);
+Vector3 operator*(const Vector3& other, double scalar);
+Vector3 operator*(double scalar, const Vector3& other);
 
 #endif // !VECTOR3_H_
 

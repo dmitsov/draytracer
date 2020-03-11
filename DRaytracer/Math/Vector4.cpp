@@ -1,4 +1,5 @@
 #include "Vector4.h"
+#include <cmath>
 
 
 
@@ -7,7 +8,7 @@ Vector4::Vector4()
 {
 }
 
-Vector4::Vector4(float newX, float newY, float newZ, float newW)
+Vector4::Vector4(double newX, double newY, double newZ, double newW)
 : x(newX), y(newY), z(newZ), w(newW)
 {
 }
@@ -30,6 +31,22 @@ Vector4 Vector4::operator+(const Vector4& other) const
 Vector4 Vector4::operator-(const Vector4& other) const
 {
 	return Vector4(x - other.x, y - other.y, z - other.z, w - other.w);
+}
+
+double Vector4::dot(const Vector4& other) const
+{
+	return x * other.x + y * other.y + z * other.z + w * other.w;
+}
+
+double Vector4::length() const
+{
+	return sqrt(x*x + y*y + z*z + w*w);
+}
+
+Vector4 Vector4::normalize() const
+{
+	float invLength = 1.0 / length();
+	return *this * invLength;
 }
 
 Vector4 operator*(const Vector4& vec, float scalar)

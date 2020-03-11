@@ -4,19 +4,23 @@
 
 struct Vector4
 {
-	float x;
-	float y;
-	float z;
-	float w;
+	double x;
+	double y;
+	double z;
+	double w;
 
 	Vector4();
-	Vector4(float x, float y, float z, float w);
+	Vector4(double x, double y, double z, double w);
 
 	bool operator==(const Vector4& other) const;
 	bool operator!=(const Vector4& other) const;
 
 	Vector4 operator+(const Vector4& other) const;
 	Vector4 operator-(const Vector4& other) const;
+
+	double dot(const Vector4& other) const;
+	double length() const;
+	Vector4 normalize() const;
 };
 
 Vector4 operator*(const Vector4& vec, float scalar);

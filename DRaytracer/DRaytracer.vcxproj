@@ -130,6 +130,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Camera\BaseCamera.h" />
+    <ClInclude Include="Camera\PinholeCamera.h" />
     <ClInclude Include="Data\SampleData.h" />
     <ClInclude Include="Materials\IMaterial.h" />
     <ClInclude Include="Math\Matrix4x4.h" />
@@ -141,6 +143,7 @@
     <ClInclude Include="Scenes\Scene.h" />
     <ClInclude Include="Shapes\BaseShape.h" />
     <ClInclude Include="Shapes\Box.h" />
+    <ClInclude Include="Shapes\Plane.h" />
     <ClInclude Include="Shapes\Sphere.h" />
     <ClInclude Include="Shapes\Triangle.h" />
   </ItemGroup>
@@ -152,6 +155,7 @@
     <ClCompile Include="Math\Vector4.cpp" />
     <ClCompile Include="Primitives\BasePrimitive.cpp" />
     <ClCompile Include="Shapes\Box.cpp" />
+    <ClCompile Include="Shapes\Plane.cpp" />
     <ClCompile Include="Shapes\Sphere.cpp" />
     <ClCompile Include="Shapes\Triangle.cpp" />
   </ItemGroup>
